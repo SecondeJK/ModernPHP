@@ -13,11 +13,10 @@ class DataStore
 
     public function addData(BasicInterface $input)
     {
-      //take the data and put it into the class data
-      foreach($input as $key => $value)
-      {
-        $this->data[$key] = $value;
-      }
+      //take the data from the input object and put it into the class data
+      $key = $input->getId();
+      $value = $input->getContent();
+      $this->data[$key] = $value;
     }
 
     public function getData()
@@ -30,20 +29,27 @@ class DataStore
     }
 }
 
-class DataInput
+class DataInput implements BasicInterface
 {
-  static id = "Some ID";
-  static content = "Some content";
+  public $id = "Some ID";
+  public $content = "Some Content";
+
+  public function getId(){
+    return $this->id;
+  }
+
+  public function getContent()
+  {
+    return $this->content;
+  }
 }
 
-$objectinput = array("BOB", "PHIL", "EDNA");
-//var_dump($objectinput);
+$inputobject = new DataInput;
 
 $object = new DataStore;
 
-//$object->addData($objectinput);
-//var_dump($object);
+$object->addData($inputobject);
 
 $object->getData();
 
- ?>
+?>
