@@ -1,13 +1,38 @@
 <?php
-  function aGenerator()
-  {
-    yield 'value1';
-    yield 'value2';
-    yield 'value3';
-  }
+//here is the traditional way of using iteration
+function makeRange($length)
+{
+  $dataset = [];
 
-  foreach (aGenerator() as $value)
+  for ($i = 0; $i < $length; $i++)
   {
-    echo $value . "\n";
-  };
+    $dataset[] = $i;
+  }
+  return $dataset;
+  //I've just put however many letters you want into an array in one go!
+  //Generator access means one integer is loaded to memory at a time
+}
+
+$hereistherange = makeRange(10);
+foreach ($hereistherange as $n)
+{
+  Echo $n . "\n";
+}
+
+Echo "Now using Generator method\n";
+
+function makeGeneratorRange($length)
+  {
+
+  for ($i = 0; $i < $length; $i++)
+  {
+    //iteration of one each time is called is memory effecient
+    yield $i;
+  }
+}
+
+foreach (makeGeneratorRange(1000000) as $i) {
+  echo $i;
+}
+
 ?>
