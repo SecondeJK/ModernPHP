@@ -2,6 +2,7 @@
 include 'Traits.php';
 
 class cat {
+  use Location;
   public $name;
   public $breed;
 
@@ -13,6 +14,7 @@ class cat {
 }
 
 class bike {
+  use Location;
   public $model;
   public $price;
 
@@ -42,5 +44,12 @@ $newprice = 9500;
 $vroom->giveinfo($newmodel, $newprice);
 
 var_dump($vroom);
+
+$testinstance = new LocationClass;
+
+//Echo "Here is a test instance of what will be the trait:\n";
+//Echo $testinstance->generateLocation('Simon') . "\n";
+
+$moggy->generateLocation($moggy->name);
 
 ?>
