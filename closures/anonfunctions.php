@@ -6,6 +6,7 @@ function addOne($input)
 }
 
 //echo addOne(145) . "\n";
+//putting a function into a variable: neat!
 
 $dave = function($input)
 {

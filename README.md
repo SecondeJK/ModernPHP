@@ -9,3 +9,5 @@ Snippets of code showing examples from sections.
 2. Interfaces
 3. Traits (Look at the Geocoder example again, though. Complex.)
 4. Generators
+5. Read ZendOP Bytecache and enabled it
+6. Read the built in PHP server switches, little functionality to display.

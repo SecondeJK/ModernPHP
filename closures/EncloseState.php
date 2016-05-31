@@ -9,6 +9,8 @@ function encloseString($name)
   };
 }
 
+//this concept is totally weird. Come back to it if
+//enclosed states are used anywhere useful
 $object1 = encloseString("Michael");
 
 echo $object1('SMITH');
