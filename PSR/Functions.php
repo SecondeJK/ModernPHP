@@ -18,5 +18,4 @@ function thisIsFunctionTwo() //PSR-1: function name lowercase then CamelCase
 { //PSR-2: functions, classes and methods should have enclosing brackets on new lines
 }
 
-thisIsFunctionOne(1, 4);
 //PSR-2 : do not close the PHP tag. PSR-1 allows it.
