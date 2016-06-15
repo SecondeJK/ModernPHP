@@ -1,5 +1,7 @@
 <?php
 
+require dirname(__DIR__) . '/../src/MyStuff/phpuMyClasses.php';
+
 class anObjectTest extends PHPUnit_Framework_TestCase
 {
   public function testSetOne()
@@ -11,7 +13,7 @@ class anObjectTest extends PHPUnit_Framework_TestCase
   public function testSetTwo()
   {
     $testobject = new anObject('Bob Smith');
-    $this->assertEquals('My content is: Bob Smith', $testobject->showString());
+    $this->assertEquals('My content is: Bob Smith\n', $testobject->showString());
   }
 
   public function testAgreement()
