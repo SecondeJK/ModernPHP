@@ -17,8 +17,13 @@ class ComposerStaticInit4a154d38d9d15fd850fb705511ea0f7b
         array (
             'Psr\\Http\\Message\\' => 17,
         ),
+        'M' => 
+        array (
+            'Monolog\\' => 8,
+        ),
         'G' => 
         array (
+            'GuzzleHttp\\Subscriber\\Oauth\\' => 28,
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
@@ -29,6 +34,14 @@ class ComposerStaticInit4a154d38d9d15fd850fb705511ea0f7b
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'GuzzleHttp\\Subscriber\\Oauth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/oauth-subscriber/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -44,11 +57,22 @@ class ComposerStaticInit4a154d38d9d15fd850fb705511ea0f7b
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'Psr\\Log\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/psr/log',
+            ),
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit4a154d38d9d15fd850fb705511ea0f7b::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit4a154d38d9d15fd850fb705511ea0f7b::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit4a154d38d9d15fd850fb705511ea0f7b::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
