@@ -28,7 +28,7 @@ $dataconvert = json_decode($contents, true);
 //echo $dataconvert;
 //var_dump($dataconvert);
 
-echo "Check this out: I've got an array of decoded JSON. Here's the location of the user: " . $dataconvert['location'];
+//echo "Check this out: I've got an array of decoded JSON. Here's the location of the user: " . $dataconvert['location'];
 
 //let's try and connect to twitter using guzzle and oauth
 
@@ -56,8 +56,17 @@ $oauthclient = new \GuzzleHttp\Client([
   'auth' => 'oauth'
 ]);
 
-$res = $oauthclient->request('GET', 'https://api.twitter.com/1.1/statuses/home_timeline.json?count=1');
+$res = $oauthclient->request('GET', 'https://api.twitter.com/1.1/statuses/home_timeline.json?count=500');
 //$decoded_res = json_decode($res, true);
 $resdata = $res->getBody()->getContents();
 $dataconvert = json_decode($resdata, true);
-print_r($dataconvert);
+//print_r($dataconvert);
+
+//print "<pre>";
+//print_r($dataconvert);
+//print "</pre>";
+echo "Fetching homepage images of users in my timeline:</br></br>";
+foreach ($dataconvert as $key => $value)
+{
+echo '<image src= "' . $value['user']['profile_image_url'] . '"></image></br>';
+}
